@@ -127,16 +127,16 @@
 		<icon src="res/ios/Icon-256.png" width="256" height="256" />
 		<icon src="res/ios/Icon-512.png" width="512" height="512" />
 		<edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
-			<string>need camera access to take pictures</string>
+			<string>Камера необходима для получения фото в профиль</string>
 		</edit-config>
 		<edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="merge">
-			<string>need photo library access to get pictures from there</string>
+			<string>Необходимо для получения фото из галереи в профиль</string>
 		</edit-config>
 		<edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
-			<string>need location access to find things nearby</string>
+			<string>Необходим доступ к местоположению для получения Вашего местоположения при поиске адреса доставки</string>
 		</edit-config>
 		<edit-config target="NSPhotoLibraryAddUsageDescription" file="*-Info.plist" mode="merge">
-			<string>need photo library access to save pictures there</string>
+			<string>Необходимо для сохранения фото в галерею</string>
 		</edit-config>
 		<edit-config file="*-Info.plist" mode="merge" target="CFBundleDevelopmentRegion">
 			<string>Russian</string>
