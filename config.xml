@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ru.reacrm" version="0.1.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="ru.reacrm" version="0.1.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 	<name>REACRM</name>
 	<description>
 		REACRM
@@ -55,6 +55,7 @@
 	<preference name="AutoHideSplashScreen" value="true" />
 	<preference name="SplashScreenDelay" value="6000" />
 	<preference name="orientation" value="portrait" />
+	<preference name="KeyboardDisplayRequiresUserAction" value="false" />
 	<icon src="icon.png" />
 	<platform name="android">
 		<resource-file src="google-services.json" target="app/google-services.json" />
