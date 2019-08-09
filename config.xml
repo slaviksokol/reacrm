@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ru.reacrm" version="0.1.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="ru.reacrm" version="0.1.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 	<name>REACRM</name>
 	<description>
 		REACRM
@@ -35,7 +35,7 @@
 		<variable name="ADDITIONAL_LANGUAGES" value="ru" />
 	</plugin>
 
-
+	<plugin name="phonegap-plugin-barcodescanner" spec="~8.0.0"/>
 	<plugin name="cordova-plugin-customurlscheme" source="npm">
 		<param name="URL_SCHEME" value="reacrm" />
 	</plugin>
