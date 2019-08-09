@@ -24,7 +24,7 @@
 	<plugin name="cordova-plugin-network-information" spec="~2.0.1" />
 	<plugin name="cordova-sqlite-storage" spec="~0.8.5" />
 	<!--<plugin name="cordova-plugin-geolocation" spec="~2.4.3" />-->
-	<plugin name="cordova-plugin-splashscreen" spec="~5.0.2"/>
+	<plugin name="cordova-plugin-splashscreen" spec="~5.0.3"/>
 	<!--<plugin name="cordova-plugin-splashscreen-iphonex-support" spec="~1.0.1"/>-->
 	<plugin name="cordova-custom-config" spec="~5.0.2"/>
 	<plugin name="cordova-plugin-insomnia" spec="~4.3.0"/>
