@@ -62,6 +62,7 @@
 		<preference name="android-minSdkVersion" value="19" />
 		<preference name="android-targetSdkVersion" value="28" />
 		<preference name="SplashMaintainAspectRatio" value="true" />
+		<preference name="SplashShowOnlyFirstTime" value="false" />
 
 		<splash src="res/screen/android/splash.png"/>
 		<icon src="res/android/Icon-36.png" density="ldpi" />
