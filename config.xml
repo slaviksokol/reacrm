@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ru.reacrm" version="0.1.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="ru.reacrm" version="0.1.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 	<name>REACRM</name>
 	<description>
 		REACRM
@@ -50,7 +50,7 @@
 	<allow-intent href="*" />
 	<allow-intent href="reacrm:" />
 	<allow-navigation href="*" />
-	<preference name="phonegap-version" value="cli-8.1.1" />
+	<preference name="phonegap-version" value="cli-9.0.0" />
 	<preference name="ShowSplashScreenSpinner" value="false"/>
 	<preference name="AutoHideSplashScreen" value="true" />
 	<preference name="SplashScreenDelay" value="6000" />
