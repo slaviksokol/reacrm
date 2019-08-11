@@ -23,8 +23,8 @@
 	<plugin name="cordova-open" spec="~1.0.12" />
 	<plugin name="cordova-plugin-network-information" spec="~2.0.1" />
 	<plugin name="cordova-sqlite-storage" spec="~0.8.5" />
-	<!--<plugin name="cordova-plugin-geolocation" spec="~2.4.3" />-->
-	<plugin name="cordova-plugin-splashscreen" spec="~5.0.3"/>
+	<!--<plugin name="cordova-plugin-geolocation" spec="~2.4.3" />
+	<plugin name="cordova-plugin-splashscreen" spec="~5.0.3"/>-->
 	<!--<plugin name="cordova-plugin-splashscreen-iphonex-support" spec="~1.0.1"/>-->
 	<plugin name="cordova-custom-config" spec="~5.0.2"/>
 	<plugin name="cordova-plugin-insomnia" spec="~4.3.0"/>
@@ -60,7 +60,7 @@
 		<resource-file src="google-services.json" target="app/google-services.json" />
 		<allow-intent href="market:*" />
 		<preference name="android-minSdkVersion" value="19" />
-		<preference name="android-targetSdkVersion" value="27" />
+		<preference name="android-targetSdkVersion" value="28" />
 		<preference name="SplashMaintainAspectRatio" value="true" />
 		<preference name="SplashShowOnlyFirstTime" value="false" />
 
