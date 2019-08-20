@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ru.reacrm" version="0.1.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="ru.reacrm" version="0.1.8" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 	<name>REACRM</name>
 	<description>
 		REACRM
@@ -23,8 +23,7 @@
 	<plugin name="cordova-open" spec="~1.0.12" />
 	<plugin name="cordova-plugin-network-information" spec="~2.0.1" />
 	<plugin name="cordova-sqlite-storage" spec="~0.8.5" />
-	<!--<plugin name="cordova-plugin-geolocation" spec="~2.4.3" />
-	<plugin name="cordova-plugin-splashscreen" spec="~5.0.3"/>-->
+	<!--<plugin name="cordova-plugin-geolocation" spec="~2.4.3" />-->
 	<!--<plugin name="cordova-plugin-splashscreen-iphonex-support" spec="~1.0.1"/>-->
 	<plugin name="cordova-custom-config" spec="~5.0.2"/>
 	<plugin name="cordova-plugin-insomnia" spec="~4.3.0"/>
@@ -73,9 +72,12 @@
 		<icon src="res/android/Icon-192.png" density="xxxhdpi" />
 	</platform>
 	<platform name="ios">
+		<plugin name="cordova-plugin-splashscreen" spec="~5.0.3"/>
 		<plugin name="cordova-plugin-disable-ios11-statusbar" spec="~1.0.0"/>
 		<plugin name="cordova-plugin-statusbar" spec="~2.4.2"/>
 		<preference name="KeyboardDisplayRequiresUserAction" value="false" />
+		<preference name="DisallowOverscroll" value="true" />
+		<preference name="UIWebViewBounce" value="false" />
 		<!--<preference name="StatusBarBackgroundColor" value="#ff9800" />
 		<preference name="StatusBarOverlaysWebView" value="false" />-->
 		<resource-file src="GoogleService-Info.plist" />
