@@ -18,6 +18,7 @@ class Framework7Component {
         $app: app,
         $f7: app,
         $options: Utils.extend({ id }, options),
+        $id: options.id || id,
       }
     );
     const { $options } = self;
@@ -86,7 +87,7 @@ class Framework7Component {
     if (html && typeof html === 'string') {
       html = html.trim();
       self.$vnode = vdom(html, self, app, true);
-      self.el = document.createElement('div');
+      self.el = document.createElement(self.$vnode.sel || 'div');
       patch(self.el, self.$vnode);
     } else if (html) {
       self.el = html;

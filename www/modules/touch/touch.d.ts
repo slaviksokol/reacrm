@@ -19,6 +19,8 @@ export namespace Touch {
       fastClicksDelayBetweenClicks? : number
       /** This parameter allows to specify elements not handled by fast clicks by passing CSS selector of such elements. */
       fastClicksExclude? : string
+      /** Distance threshold (in px) to prevent short swipes. So if tap/move distance is larger than this value then "click" will not be triggered. (default 5) */
+      touchClicksDistanceThreshold? : number
       /** . (default true) */
       disableContextMenu? : boolean
       /** Enables tap hold. (default false) */
@@ -29,7 +31,7 @@ export namespace Touch {
       tapHoldPreventClicks? : boolean
       /** When enabled, app will add "active-state" class to currently touched (:active) element.. (default true) */
       activeState? : boolean
-      /** CSS selector of elements where enabled activeState will add appropriate active class. (default a, button, label, span, .actions-button) */
+      /** CSS selector of elements where enabled activeState will add appropriate active class. (default a, button, label, span, .actions-button, .stepper-button, .stepper-button-plus, .stepper-button-minus, .card-expandable, .menu-item, .link, .item-link) */
       activeStateElements? : string
       /** Enables MD-theme specific touch ripple effect. (default true) */
       mdTouchRipple? : boolean

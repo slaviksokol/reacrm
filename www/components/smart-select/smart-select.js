@@ -9,6 +9,8 @@ export default {
     smartSelect: {
       el: undefined,
       valueEl: undefined,
+      setValueText: true,
+      formatValueText: null,
       openIn: 'page', // or 'popup' or 'sheet' or 'popover'
       pageTitle: undefined,
       pageBackLinkText: 'Back',
@@ -22,6 +24,7 @@ export default {
       closeOnSelect: false,
       virtualList: false,
       virtualListHeight: undefined,
+      scrollToSelectedItem: false,
       formColorTheme: undefined,
       navbarColorTheme: undefined,
       routableModals: true,
