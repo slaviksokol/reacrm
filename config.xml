@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ru.reacrm" version="0.3.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-	<name>REACRM</name>
+<widget id="ru.reacrm" version="0.3.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+	<name>REA CRM</name>
 	<description>
-		REACRM
+		REA CRM
 	</description>
-	<author email="info@j-soft.online" href="https://reacrm.ru">REACRM</author>
+	<author email="info@j-soft.online" href="https://reacrm.ru">REA CRM</author>
 	<content src="index.html" />
 	<plugin name="cordova-admob-sdk" spec="~0.17.0">
 		<variable name="PLAY_SERVICES_VERSION" value="11.6.2" />
@@ -16,6 +16,7 @@
 	<plugin name="cordova-plugin-device" spec="~2.0.2" />
 	<plugin name="cordova-plugin-camera" spec="~4.0.3" />
 	<plugin name="cordova-call" spec="~1.1.4" />
+	<plugin name="yandex-appmetrica-plugin-cordova" spec="~1.0.0" />
 	<!--<plugin name="cordova-plugin-media" spec="5.0.2" />-->
 	<!--<plugin name="cordova-plugin-media-capture" spec="3.0.2" />-->
 	<plugin name="cordova-plugin-file-downloader" spec="~0.4.0" />
