@@ -5,7 +5,7 @@ import View from './view-class';
 function getCurrentView(app) {
   const $popoverView = $('.popover.modal-in .view');
   const $popupView = $('.popup.modal-in .view');
-  const $panelView = $('.panel.panel-active .view');
+  const $panelView = $('.panel.panel-in .view');
   let $viewsEl = $('.views');
   if ($viewsEl.length === 0) $viewsEl = app.root;
   // Find active view as tab
@@ -44,6 +44,7 @@ export default {
       xhrCacheIgnore: [],
       xhrCacheIgnoreGetParameters: false,
       xhrCacheDuration: 1000 * 60 * 10, // Ten minutes
+      componentCache: true,
       preloadPreviousPage: true,
       allowDuplicateUrls: false,
       reloadPages: false,
@@ -56,6 +57,7 @@ export default {
       unloadTabContent: true,
       passRouteQueryToRequest: true,
       passRouteParamsToRequest: false,
+      loadInitialPage: true,
       // Swipe Back
       iosSwipeBack: true,
       iosSwipeBackAnimateShadow: true,
@@ -83,7 +85,6 @@ export default {
       animate: true,
       // iOS Dynamic Navbar
       iosDynamicNavbar: true,
-      iosSeparateDynamicNavbar: true,
       // Animate iOS Navbar Back Icon
       iosAnimateNavbarBackIcon: true,
       // Delays

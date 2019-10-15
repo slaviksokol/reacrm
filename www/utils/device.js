@@ -1,4 +1,4 @@
-import { window, document } from 'ssr-window';
+import { window } from 'ssr-window';
 import Support from './support';
 
 const Device = (function Device() {
@@ -10,9 +10,7 @@ const Device = (function Device() {
     android: false,
     androidChrome: false,
     desktop: false,
-    windowsPhone: false,
     iphone: false,
-    iphoneX: false,
     ipod: false,
     ipad: false,
     edge: false,
@@ -28,15 +26,10 @@ const Device = (function Device() {
   const screenWidth = window.screen.width;
   const screenHeight = window.screen.height;
 
-  const windowsPhone = ua.match(/(Windows Phone);?[\s\/]+([\d.]+)?/); // eslint-disable-line
   const android = ua.match(/(Android);?[\s\/]+([\d.]+)?/); // eslint-disable-line
   let ipad = ua.match(/(iPad).*OS\s([\d_]+)/);
   const ipod = ua.match(/(iPod)(.*OS\s([\d_]+))?/);
   const iphone = !ipad && ua.match(/(iPhone\sOS|iOS)\s([\d_]+)/);
-  const iphoneX = iphone && (
-    (screenWidth === 375 && screenHeight === 812) // X/XS
-    || (screenWidth === 414 && screenHeight === 896) // XR / XS Max
-  );
   const ie = ua.indexOf('MSIE ') >= 0 || ua.indexOf('Trident/') >= 0;
   const edge = ua.indexOf('Edge/') >= 0;
   const firefox = ua.indexOf('Gecko/') >= 0 && ua.indexOf('Firefox/') >= 0;
@@ -63,12 +56,6 @@ const Device = (function Device() {
   device.edge = edge;
   device.firefox = firefox;
 
-  // Windows
-  if (windowsPhone) {
-    device.os = 'windowsPhone';
-    device.osVersion = windowsPhone[2];
-    device.windowsPhone = true;
-  }
   // Android
   if (android && !windows) {
     device.os = 'android';
@@ -84,7 +71,6 @@ const Device = (function Device() {
   if (iphone && !ipod) {
     device.osVersion = iphone[2].replace(/_/g, '.');
     device.iphone = true;
-    device.iphoneX = iphoneX;
   }
   if (ipad) {
     device.osVersion = ipad[2].replace(/_/g, '.');
@@ -108,7 +94,7 @@ const Device = (function Device() {
   device.standalone = device.webView;
 
   // Desktop
-  device.desktop = !(device.ios || device.android || device.windowsPhone) || electron;
+  device.desktop = !(device.ios || device.android) || electron;
   if (device.desktop) {
     device.electron = electron;
     device.macos = macos;
@@ -120,25 +106,6 @@ const Device = (function Device() {
       device.os = 'windows';
     }
   }
-
-  // Meta statusbar
-  const metaStatusbar = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
-
-  // Check for status bar and fullscreen app mode
-  device.needsStatusbarOverlay = function needsStatusbarOverlay() {
-    if (device.desktop) return false;
-    if (device.standalone && device.ios && metaStatusbar && metaStatusbar.content === 'black-translucent') {
-      return true;
-    }
-    if ((device.webView || (device.android && device.cordova)) && (window.innerWidth * window.innerHeight === window.screen.width * window.screen.height)) {
-      if (device.iphoneX && (window.orientation === 90 || window.orientation === -90)) {
-        return false;
-      }
-      return true;
-    }
-    return false;
-  };
-  device.statusbar = device.needsStatusbarOverlay();
 
   // Pixel Ratio
   device.pixelRatio = window.devicePixelRatio || 1;

@@ -82,8 +82,11 @@ class SmartSelect extends Framework7Class {
     }
     function onChange() {
       const value = ss.$selectEl.val();
-      ss.$el.trigger('smartselect:change', ss, value);
+      ss.$el.trigger('smartselect:change', value);
       ss.emit('local::change smartSelectChange', ss, value);
+      if (ss.vl) {
+        ss.vl.clearCache();
+      }
       ss.setValueText();
     }
     ss.attachEvents = function attachEvents() {
@@ -184,7 +187,25 @@ class SmartSelect extends Framework7Class {
     if (ss.params.setValueText) {
       ss.$valueEl.text(ss.formatValueText(optionText));
     }
+    ss.$selectEl.trigger('change');
     return ss;
+  }
+
+  unsetValue() {
+    const ss = this;
+    if (ss.params.setValueText) {
+      ss.$valueEl.text(ss.formatValueText([]));
+    }
+    ss.$selectEl.find('option').each((optionIndex, optionEl) => {
+      optionEl.selected = false;
+      optionEl.checked = false;
+    });
+    ss.$selectEl[0].value = null;
+
+    if (ss.$containerEl) {
+      ss.$containerEl.find(`input[name="${ss.inputName}"][type="checkbox"], input[name="${ss.inputName}"][type="radio"]`).prop('checked', false);
+    }
+    ss.$selectEl.trigger('change');
   }
 
   getValue() {
@@ -336,10 +357,19 @@ class SmartSelect extends Framework7Class {
     if (item.isLabel) {
       itemHtml = `<li class="item-divider">${item.groupLabel}</li>`;
     } else {
+      let selected = item.selected;
+      let disabled;
+      if (ss.params.virtualList) {
+        const ssValue = ss.getValue();
+        selected = ss.multiple ? ssValue.indexOf(item.value) >= 0 : ssValue === item.value;
+        if (ss.multiple) {
+          disabled = ss.multiple && !selected && ssValue.length === parseInt(ss.maxLength, 10);
+        }
+      }
       itemHtml = `
-        <li class="${item.className || ''}">
+        <li class="${item.className || ''}${disabled ? ' disabled' : ''}">
           <label class="item-${item.inputType} item-content">
-            <input type="${item.inputType}" name="${item.inputName}" value="${item.value}" ${item.selected ? 'checked' : ''}/>
+            <input type="${item.inputType}" name="${item.inputName}" value="${item.value}" ${selected ? 'checked' : ''}/>
             <i class="icon icon-${item.inputType}"></i>
             ${item.hasMedia ? `
               <div class="item-media">
@@ -378,6 +408,7 @@ class SmartSelect extends Framework7Class {
     const pageHtml = `
       <div class="page smart-select-page ${cssClass}" data-name="smart-select-page" data-select-name="${ss.selectName}">
         <div class="navbar ${ss.params.navbarColorTheme ? `color-${ss.params.navbarColorTheme}` : ''}">
+          <div class="navbar-bg"></div>
           <div class="navbar-inner sliding ${ss.params.navbarColorTheme ? `color-${ss.params.navbarColorTheme}` : ''}">
             <div class="left">
               <a class="link back">
@@ -414,6 +445,7 @@ class SmartSelect extends Framework7Class {
         <div class="view">
           <div class="page smart-select-page ${ss.params.searchbar ? 'page-with-subnavbar' : ''}" data-name="smart-select-page">
             <div class="navbar ${ss.params.navbarColorTheme ? `color-${ss.params.navbarColorTheme}` : ''}">
+              <div class="navbar-bg"></div>
               <div class="navbar-inner sliding">
                 ${pageTitle ? `<div class="title">${pageTitle}</div>` : ''}
                 <div class="right">
@@ -572,14 +604,14 @@ class SmartSelect extends Framework7Class {
     // Attach input events
     ss.attachInputsEvents();
 
-    ss.$el.trigger('smartselect:open', ss);
+    ss.$el.trigger('smartselect:open');
     ss.emit('local::open smartSelectOpen', ss);
   }
 
   onOpened() {
     const ss = this;
 
-    ss.$el.trigger('smartselect:opened', ss);
+    ss.$el.trigger('smartselect:opened');
     ss.emit('local::opened smartSelectOpened', ss);
   }
 
@@ -603,7 +635,7 @@ class SmartSelect extends Framework7Class {
     // Detach events
     ss.detachInputsEvents();
 
-    ss.$el.trigger('smartselect:close', ss);
+    ss.$el.trigger('smartselect:close');
     ss.emit('local::close smartSelectClose', ss);
   }
 
@@ -614,7 +646,7 @@ class SmartSelect extends Framework7Class {
     ss.$containerEl = null;
     delete ss.$containerEl;
 
-    ss.$el.trigger('smartselect:closed', ss);
+    ss.$el.trigger('smartselect:closed');
     ss.emit('local::closed smartSelectClosed', ss);
   }
 
@@ -657,6 +689,8 @@ class SmartSelect extends Framework7Class {
 
     const popupParams = {
       content: popupHtml,
+      push: ss.params.popupPush,
+      swipeToClose: ss.params.popupSwipeToClose,
       on: {
         popupOpen(popup) {
           ss.onOpen('popup', popup.el);
@@ -699,6 +733,8 @@ class SmartSelect extends Framework7Class {
       backdrop: false,
       scrollToEl: ss.$el,
       closeByOutsideClick: true,
+      push: ss.params.sheetPush,
+      swipeToClose: ss.params.sheetSwipeToClose,
       on: {
         sheetOpen(sheet) {
           ss.onOpen('sheet', sheet.el);
@@ -797,6 +833,7 @@ class SmartSelect extends Framework7Class {
     } else {
       ss.modal.once('modalClosed', () => {
         Utils.nextTick(() => {
+          if (ss.destroyed) return;
           ss.modal.destroy();
           delete ss.modal;
         });
@@ -815,7 +852,7 @@ class SmartSelect extends Framework7Class {
   destroy() {
     const ss = this;
     ss.emit('local::beforeDestroy smartSelectBeforeDestroy', ss);
-    ss.$el.trigger('smartselect:beforedestroy', ss);
+    ss.$el.trigger('smartselect:beforedestroy');
     ss.detachEvents();
     delete ss.$el[0].f7SmartSelect;
     Utils.deleteProps(ss);
