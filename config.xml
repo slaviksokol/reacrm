@@ -84,7 +84,12 @@
 		</feature>
 		<plugin name="cordova-plugin-splashscreen" spec="~5.0.3"/>
 		<plugin name="cordova-plugin-disable-ios11-statusbar" spec="~1.0.0"/>
-		<!--<plugin name="cordova-plugin-statusbar" spec="~2.4.2"/>-->
+		<plugin name="cordova-plugin-statusbar" spec="~2.4.2"/>
+		<plugin name="cordova-plugin-wkwebview-engine" spec="~1.2.1"/>
+		<feature name="CDVWKWebViewEngine">
+		  <param name="ios-package" value="CDVWKWebViewEngine" />
+		</feature>
+		<preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
 		<preference name="KeyboardDisplayRequiresUserAction" value="false" />
 		<preference name="DisallowOverscroll" value="true" />
 		<preference name="UIWebViewBounce" value="false" />
