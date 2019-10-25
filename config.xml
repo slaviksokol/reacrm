@@ -44,7 +44,7 @@
 	<!--<plugin name="cordova-plugin-ace" spec="~0.1.2"/>-->
 	<plugin name="cordova-plugin-x-socialsharing" spec="~5.6.1"/>
 	<plugin name="cordova-plugin-contacts" spec="~3.0.0"/>
-	<plugin name="accountmanagerplugin" spec="~1.0.0"/>
+	<plugin name="accountmanagerplugin" source="npm"/>
 	<plugin name="com.matrixgz.cordova-plugin-image-picker" spec="~1.1.9"/>
 	<plugin name="cordova-plugin-customurlscheme" source="npm">
 		<param name="URL_SCHEME" value="reacrm" />
@@ -71,7 +71,7 @@
 	<platform name="android">
 		<resource-file src="google-services.json" target="app/google-services.json" />
 		<allow-intent href="market:*" />
-		<preference name="android-minSdkVersion" value="23" />
+		<preference name="android-minSdkVersion" value="19" />
 		<preference name="android-targetSdkVersion" value="28" />
 		<preference name="SplashMaintainAspectRatio" value="true" />
 		<preference name="SplashShowOnlyFirstTime" value="false" />
