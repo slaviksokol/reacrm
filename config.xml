@@ -70,7 +70,7 @@
 	<icon src="icon.png" />
 	<preference name="AccountManagerLabel" value="Rea CRM" />
 	<preference name="AccountManagerIconUrl" value="icon.png" />
-	<preference name="AccountManagerType" value="reacrm" />
+	<preference name="AccountManagerType" value="ru.reacrm" />
 	<platform name="android">
 		<resource-file src="google-services.json" target="app/google-services.json" />
 		<allow-intent href="market:*" />
