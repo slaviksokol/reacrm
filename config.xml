@@ -68,6 +68,9 @@
 	<preference name="SplashScreenDelay" value="6000" />
 	<preference name="orientation" value="portrait" />
 	<icon src="icon.png" />
+	<preference name="AccountManagerLabel" value="Rea CRM" />
+	<preference name="AccountManagerIconUrl" value="icon.png" />
+	<preference name="AccountManagerType" value="reacrm" />
 	<platform name="android">
 		<resource-file src="google-services.json" target="app/google-services.json" />
 		<allow-intent href="market:*" />
@@ -86,9 +89,6 @@
 		<feature name="SocialSharing">
 			<param name="android-package" value="nl.xservices.plugins.SocialSharing" />
 		</feature>
-		<preference name="AccountManagerLabel" value="Rea CRM" />
-		<preference name="AccountManagerIconUrl" value="icon.png" />
-		<preference name="AccountManagerType" value="reacrm" />
 	</platform>
 	<platform name="ios">
 		<feature name="SocialSharing">
