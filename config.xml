@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ru.reacrm" version="0.3.8" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="ru.reacrm" version="0.3.9" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 	<name>REA CRM</name>
 	<description>
 		REA CRM
@@ -44,6 +44,7 @@
 	<!--<plugin name="cordova-plugin-ace" spec="~0.1.2"/>-->
 	<plugin name="cordova-plugin-x-socialsharing" spec="~5.6.1"/>
 	<plugin name="cordova-plugin-contacts" spec="~3.0.0"/>
+	<plugin name="cordova-plugin-kunder-accountmanager" spec="~1.0.0"/>
 	<plugin name="com.matrixgz.cordova-plugin-image-picker" spec="~1.1.9"/>
 	<plugin name="cordova-plugin-customurlscheme" source="npm">
 		<param name="URL_SCHEME" value="reacrm" />
