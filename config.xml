@@ -86,6 +86,9 @@
 		<feature name="SocialSharing">
 			<param name="android-package" value="nl.xservices.plugins.SocialSharing" />
 		</feature>
+		<preference name="AccountManagerLabel" value="Rea CRM" />
+		<preference name="AccountManagerIconUrl" value="icon.png" />
+		<preference name="AccountManagerType" value="reacrm" />
 	</platform>
 	<platform name="ios">
 		<feature name="SocialSharing">
