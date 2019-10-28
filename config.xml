@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ru.reacrm" version="0.3.92" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="ru.reacrm" version="0.3.93" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 	<name>REA CRM</name>
 	<description>
 		REA CRM
@@ -21,6 +21,7 @@
 	<plugin name="cordova-plugin-file-downloader" spec="~0.4.0" />
 	<plugin name="cordova-plugin-file" spec="~6.0.1" />
 	<plugin name="cordova-plugin-file-transfer" spec="~1.7.1" />
+	<plugin name="cordova-plugin-mediapicker-dmcsdk" source="npm" />
 	<plugin name="cordova-open" spec="~1.0.12" />
 	<plugin name="cordova-plugin-network-information" spec="~2.0.1" />
 	<plugin name="cordova-sqlite-storage" spec="~0.8.5" />
