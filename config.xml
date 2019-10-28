@@ -92,7 +92,7 @@
 		<plugin name="cordova-plugin-kunder-accountmanager" source="npm"/>
 		<preference name="AccountManagerLabel" value="res/android/Icon-512.png" />
 		<preference name="AccountManagerIconUrl" value="res/android/Icon-512.png" />
-		<preference name="AccountManagerType" value="" />
+		<preference name="AccountManagerType" value="reacrm" />
 	</platform>
 	<platform name="ios">
 		<plugin name="accountmanagerplugin" source="npm"/>
