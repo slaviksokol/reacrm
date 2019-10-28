@@ -90,8 +90,8 @@
 			<param name="android-package" value="nl.xservices.plugins.SocialSharing" />
 		</feature>
 		<plugin name="cordova-plugin-kunder-accountmanager" source="npm"/>
-		<preference name="AccountManagerLabel" value="Rea CRM" />
-		<preference name="AccountManagerIconUrl" value="icon.png" />
+		<preference name="AccountManagerLabel" value="res/android/Icon-512.png" />
+		<preference name="AccountManagerIconUrl" value="res/android/Icon-512.png" />
 		<preference name="AccountManagerType" value="ru.reacrm" />
 	</platform>
 	<platform name="ios">
