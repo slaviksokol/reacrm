@@ -47,7 +47,11 @@
 	<!--<plugin name="cordova-plugin-ace" spec="~0.1.2"/>-->
 	<plugin name="cordova-plugin-x-socialsharing" spec="~5.6.1"/>
 	<plugin name="cordova-plugin-contacts" spec="~3.0.0"/>
-	<!--<plugin name="accountmanagerplugin" source="npm"/>-->
+	<plugin name="accountmanagerplugin" source="npm">
+		<variable name="AccountManagerLabel" value="Rea CRM" />
+		<variable name="AccountManagerIconUrl" value="icon.png" />
+		<variable name="AccountManagerType" value="ru.reacrm" />
+	</plugin>
 	<!--<plugin name="com.matrixgz.cordova-plugin-image-picker" spec="~1.1.9"/>-->
 	<plugin name="cordova-plugin-customurlscheme" source="npm">
 		<param name="URL_SCHEME" value="reacrm" />
