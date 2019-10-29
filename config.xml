@@ -94,9 +94,9 @@
 		<preference name="AccountManagerLabel" value="res/android/Icon-512.png" />
 		<preference name="AccountManagerIconUrl" value="res/android/Icon-512.png" />
 		<preference name="AccountManagerType" value="ru.reacrm" />
-		<edit-config parent="/resources" target="./res/values/strings.xml">
+		<config-file target="res/values/strings.xml" parent="/*">
 			<string name="authLabel">Rea CRM</string>
-		</edit-config>
+		</config-file>
 	</platform>
 	<platform name="ios">
 		<plugin name="accountmanagerplugin" source="npm"/>
