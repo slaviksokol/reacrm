@@ -90,7 +90,8 @@
 			<param name="android-package" value="nl.xservices.plugins.SocialSharing" />
 		</feature>
 		<!--<plugin name="cordova-plugin-kunder-accountmanager" source="npm"/>-->
-		<plugin name="cordova-plugin-kunder-accountmanager" spec="https://github.com/slaviksokol/cordova-plugin-kunder-accountmanager.git"/>
+		<!--<plugin name="cordova-plugin-kunder-accountmanager" spec="https://github.com/slaviksokol/cordova-plugin-kunder-accountmanager.git"/>-->
+		<plugin name="cordova-plugin-kunder-accountmanager" spec="https://github.com/polychrom/cordova-android-accountmanager.git"/>
 		<preference name="AccountManagerLabel" value="res/android/Icon-512.png" />
 		<preference name="AccountManagerIconUrl" value="res/android/Icon-512.png" />
 		<preference name="AccountManagerType" value="ru.reacrm" />
