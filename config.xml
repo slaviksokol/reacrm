@@ -188,11 +188,6 @@
 		<edit-config file="*-Info.plist" mode="merge" target="CFBundleDevelopmentRegion">
 			<string>Russian</string>
 		</edit-config>
-		<edit-config file="*-Info.plist" mode="merge" target="CFBundleLocalizations">
-			<array>
-				<string>ru</string>
-			</array>
-		</edit-config>
 		<!--<edit-config file="*-Info.plist" mode="merge" target="NSUserActivityTypes">
 			<array>
 				<string>INStartAudioCallIntent</string>
