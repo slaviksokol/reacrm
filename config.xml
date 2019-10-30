@@ -6,12 +6,12 @@
 	</description>
 	<author email="info@j-soft.online" href="https://reacrm.ru">REA CRM</author>
 	<content src="index.html" />
+	<plugin name="cordova-admob-sdk" spec="~0.22.0">
+		<variable name="PLAY_SERVICES_VERSION" value="11.6.2" />
+	</plugin>
 	<plugin name="cordova-plugin-ios-localized-strings" spec="~1.0.6">
 		<variable name="MAIN_LANGUAGE" value="Russian" />
 		<variable name="ADDITIONAL_LANGUAGES" value="ru" />
-	</plugin>
-	<plugin name="cordova-admob-sdk" spec="~0.22.0">
-		<variable name="PLAY_SERVICES_VERSION" value="11.6.2" />
 	</plugin>
 	<plugin name="cordova-plugin-whitelist" spec="~1.3.3" />
 	<plugin name="cordova-plugin-battery-status" spec="2.0.2" />
