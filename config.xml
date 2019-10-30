@@ -24,7 +24,7 @@
 	<!--<plugin name="cordova-plugin-mediapicker-dmcsdk" source="npm" >
 		<variable name="IOS_PHOTO_LIBRARY_USAGE_DESCRIPTION" value="Необходимо для выбора фотографий"/>
 	</plugin>-->
-	<plugin name="cordova-plugin-kunder-accountmanager" spec="https://github.com/slaviksokol/cordova-plugin-mediaPicker.git">
+	<plugin name="cordova-plugin-mediapicker-dmcsdk" spec="https://github.com/slaviksokol/cordova-plugin-mediaPicker.git">
 		<variable name="IOS_PHOTO_LIBRARY_USAGE_DESCRIPTION" value="Необходимо для выбора фотографий"/>
 	</plugin>
 	<plugin name="cordova-open" spec="~1.0.12" />
