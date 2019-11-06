@@ -58,6 +58,7 @@
 	</plugin>
 	<!--<plugin name="cordova-image-picker" source="npm">
 	</plugin>-->
+	<plugin name="cordova-plugin-keyboard" spec="~1.2.0"/>
 	<access origin="*" />
 	<allow-intent href="http://*/*" />
 	<allow-intent href="https://*/*" />
@@ -108,7 +109,6 @@
 			<param name="ios-package" value="SocialSharing" />
 		</feature>
 		<plugin name="cordova-plugin-splashscreen" spec="~5.0.3"/>
-		<plugin name="cordova-plugin-keyboard" spec="~1.2.0"/>
 		<plugin name="cordova-plugin-disable-ios11-statusbar" spec="~1.0.0"/>
 		<plugin name="cordova-plugin-statusbar" spec="~2.4.2"/>
 		<plugin name="cordova-plugin-wkwebview-engine" spec="~1.2.1"/>
